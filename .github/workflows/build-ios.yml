@@ -1,0 +1,37 @@
+name: Build ExamFlow iOS
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Import ExamFlow v6.8 web resources
+        run: |
+          curl -L -o android-project.zip https://raw.githubusercontent.com/Gennosukekun/ExamFlow/main/ExamFlow_Italia_Android_Project_More_Features_v6_8_Natural_Scroll.zip
+          rm -rf android-src ExamFlow/Resources
+          mkdir -p android-src ExamFlow/Resources
+          unzip -q android-project.zip -d android-src
+          cp android-src/app/src/main/assets/index.html ExamFlow/Resources/index.html
+          cp android-src/app/src/main/assets/app.js ExamFlow/Resources/app.js
+          cp android-src/app/src/main/assets/styles.css ExamFlow/Resources/styles.css
+
+      - name: Build unsigned iOS app
+        run: |
+          xcodebuild -project ExamFlow.xcodeproj -scheme ExamFlow -configuration Release -sdk iphoneos -derivedDataPath build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO build
+
+      - name: Package unsigned IPA
+        run: |
+          mkdir -p Payload
+          cp -R build/Build/Products/Release-iphoneos/ExamFlow.app Payload/
+          zip -r ExamFlow-iOS-v6.8-unsigned.ipa Payload
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ExamFlow-iOS-v6.8-unsigned
+          path: ExamFlow-iOS-v6.8-unsigned.ipa
