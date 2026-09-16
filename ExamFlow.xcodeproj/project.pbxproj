@@ -1,0 +1,28 @@
+// !$*UTF8*$!
+{
+ archiveVersion = 1; classes = {}; objectVersion = 56;
+ objects = {
+  A1 = {isa = PBXProject; buildConfigurationList = A2; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; mainGroup = A3; productRefGroup = A4; projectDirPath = ""; targets = (A5,); };
+  A3 = {isa = PBXGroup; children = (A6,A4); sourceTree = "<group>";};
+  A4 = {isa = PBXGroup; children = (A7,); name = Products; sourceTree = "<group>";};
+  A6 = {isa = PBXGroup; children = (B1,B2,B3,B4,B5); path = ExamFlow; sourceTree = "<group>";};
+  A7 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExamFlow.app; sourceTree = BUILT_PRODUCTS_DIR;};
+  B1 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>";};
+  B2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>";};
+  B3 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>";};
+  B4 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>";};
+  B5 = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>";};
+  C1 = {isa = PBXBuildFile; fileRef = B1;}; C2 = {isa = PBXBuildFile; fileRef = B2;}; C3 = {isa = PBXBuildFile; fileRef = B3;}; C4 = {isa = PBXBuildFile; fileRef = B5;};
+  A5 = {isa = PBXNativeTarget; buildConfigurationList = D1; buildPhases = (E1,E2,E3); buildRules = (); dependencies = (); name = ExamFlow; productName = ExamFlow; productReference = A7; productType = "com.apple.product-type.application";};
+  E1 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (C1,C2,C3); runOnlyForDeploymentPostprocessing = 0;};
+  E2 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0;};
+  E3 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (C4); runOnlyForDeploymentPostprocessing = 0;};
+  A2 = {isa = XCConfigurationList; buildConfigurations = (F1,F2); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+  D1 = {isa = XCConfigurationList; buildConfigurations = (G1,G2); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release;};
+  F1 = {isa = XCBuildConfiguration; buildSettings = {SDKROOT = iphoneos; IPHONEOS_DEPLOYMENT_TARGET = 15.0;}; name = Debug;};
+  F2 = {isa = XCBuildConfiguration; buildSettings = {SDKROOT = iphoneos; IPHONEOS_DEPLOYMENT_TARGET = 15.0;}; name = Release;};
+  G1 = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_STYLE = Automatic; INFOPLIST_FILE = ExamFlow/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 15.0; PRODUCT_BUNDLE_IDENTIFIER = com.examflow.italia; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2";}; name = Debug;};
+  G2 = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_STYLE = Automatic; INFOPLIST_FILE = ExamFlow/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 15.0; PRODUCT_BUNDLE_IDENTIFIER = com.examflow.italia; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = "1,2";}; name = Release;};
+ };
+ rootObject = A1;
+}
